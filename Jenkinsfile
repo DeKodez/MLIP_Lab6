@@ -16,10 +16,10 @@ pipeline {
                 echo 'Test Step: We run testing tool like pytest here'
 
                 # TODO fill out the path to conda here
-                # sudo /home/djtan/miniconda3/bin/conda init
+                sudo /home/djtan/miniconda3/bin/conda init
 
                 # TODO Complete the command to run pytest
-                # sudo /home/djtan/miniconda3/bin/conda run -n mlip pytest
+                sudo /home/djtan/miniconda3/bin/conda run -n mlip pytest
 
                 # pytest --junitxml=test-results.xml || exit 1
                 # exit 1 comment this line after implementing Jenkinsfile
