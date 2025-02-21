@@ -16,6 +16,7 @@ pipeline {
                 echo 'Test Step: We run testing tool like pytest here'
 
                 # Initialize conda if necessary (uncomment if needed)
+                export PATH="/home/djtan/miniconda3/bin:$PATH"
                 source /home/djtan/miniconda3/etc/profile.d/conda.sh || exit 1
                 
                 # Activate the required conda environment
