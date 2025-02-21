@@ -16,17 +16,18 @@ pipeline {
                 echo 'Test Step: We run testing tool like pytest here'
 
                 # Initialize conda if necessary (uncomment if needed)
-                # export PATH="/home/djtan/miniconda3/bin:$PATH"
-                # source /home/djtan/miniconda3/etc/profile.d/conda.sh || exit 1
+                export PATH="/home/djtan/miniconda3/bin:$PATH"
+                # source /opt/conda/bin/activate || exit 1
+                conda activate mlip || exit 1
                 
                 # Activate the required conda environment
-                export PATH="/home/djtan/miniconda3/bin:$PATH"
+                # export PATH="/home/djtan/miniconda3/bin:$PATH"
 
                 # Run pytest in Conda environment without activating it
-                /home/djtan/miniconda3/bin/conda run -n myenv pytest --junitxml=test-results.xml || exit 1
+                # /home/djtan/miniconda3/bin/conda run -n myenv pytest --junitxml=test-results.xml || exit 1
 
                 # Run pytest with JUnit XML report
-                # pytest --junitxml=test-results.xml || exit 1
+                pytest --junitxml=test-results.xml || exit 1
                 
                 # exit 1 comment this line after implementing Jenkinsfile
                 '''
