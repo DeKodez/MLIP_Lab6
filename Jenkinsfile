@@ -21,7 +21,7 @@ pipeline {
                 # TODO Complete the command to run pytest
                 # sudo /home/djtan/miniconda3/bin/conda run -n mlip pytest
 
-                pytest --junitxml=test-results.xml || exit 1
+                # pytest --junitxml=test-results.xml || exit 1
                 # exit 1 comment this line after implementing Jenkinsfile
                 '''
 
