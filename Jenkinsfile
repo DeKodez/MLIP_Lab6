@@ -21,8 +21,8 @@ pipeline {
                 # TODO Complete the command to run pytest
                 # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
 
-                echo 'pytest not runned'
-                exit 1 #comment this line after implementing Jenkinsfile
+                pytest --junitxml=test-results.xml || exit 1
+                # exit 1 comment this line after implementing Jenkinsfile
                 '''
 
             }
