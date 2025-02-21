@@ -15,21 +15,22 @@ pipeline {
                 sh '''#!/bin/bash
                 echo 'Test Step: We run testing tool like pytest here'
 
-                # TODO fill out the path to conda here
-                # sudo /PATH/TO/CONDA init
+                # Initialize conda if necessary (uncomment if needed)
+                source /opt/conda/bin/activate || exit 1
+                
+                # Activate the required conda environment
+                source activate myenv || exit 1
 
-                # TODO Complete the command to run pytest
-                # sudo /PATH/TO/CONDA run -n <Envinronment Name> <Command you want to run>
-
+                # Run pytest with JUnit XML report
                 pytest --junitxml=test-results.xml || exit 1
+                
                 # exit 1 comment this line after implementing Jenkinsfile
                 '''
-
             }
         }
         stage('Deploy') {
             steps {
-                echo 'In this step, we deploy our porject'
+                echo 'In this step, we deploy our project'
                 echo 'Depending on the context, we may publish the project artifact or upload pickle files'
             }
         }
